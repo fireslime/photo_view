@@ -5,7 +5,7 @@ void main() => runApp(MyApp());
 
 ThemeData theme = ThemeData(
   primaryColor: Colors.black,
-  backgroundColor: Colors.white10,
+  scaffoldBackgroundColor: Colors.white10,
   fontFamily: 'PTSans',
 );
 

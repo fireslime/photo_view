@@ -260,6 +260,7 @@ class PhotoView extends StatefulWidget {
     this.tightMode,
     this.filterQuality,
     this.disableGestures,
+    this.disableDoubleTap,
     this.errorBuilder,
     this.enablePanAlways,
     this.strictScale,
@@ -297,6 +298,7 @@ class PhotoView extends StatefulWidget {
     this.tightMode,
     this.filterQuality,
     this.disableGestures,
+    this.disableDoubleTap,
     this.enablePanAlways,
     this.strictScale,
   })  : errorBuilder = null,
@@ -404,9 +406,14 @@ class PhotoView extends StatefulWidget {
   /// Quality levels for image filters.
   final FilterQuality? filterQuality;
 
-  // Removes gesture detector if `true`.
-  // Useful when custom gesture detector is used in child widget.
+  /// Removes the gesture detector when 'true', disabling all gesture-based commands.
+  /// This is useful if a custom gesture detector is implemented in a child widget.
   final bool? disableGestures;
+
+  /// Disables double-tap gesture when `true`. This disables the scale state cycle.
+  /// Useful for assigning another command to the double-tap gesture.
+  /// This property is ignored if [disableGestures] is true.
+  final bool? disableDoubleTap;
 
   /// Enable pan the widget even if it's smaller than the hole parent widget.
   /// Useful when you want to drag a widget without restrictions.
@@ -534,6 +541,7 @@ class _PhotoViewState extends State<PhotoView>
                 tightMode: widget.tightMode,
                 filterQuality: widget.filterQuality,
                 disableGestures: widget.disableGestures,
+                disableDoubleTap: widget.disableDoubleTap,
                 enablePanAlways: widget.enablePanAlways,
                 strictScale: widget.strictScale,
               )
@@ -561,6 +569,7 @@ class _PhotoViewState extends State<PhotoView>
                 tightMode: widget.tightMode,
                 filterQuality: widget.filterQuality,
                 disableGestures: widget.disableGestures,
+                disableDoubleTap: widget.disableDoubleTap,
                 errorBuilder: widget.errorBuilder,
                 enablePanAlways: widget.enablePanAlways,
                 strictScale: widget.strictScale,
