@@ -34,7 +34,7 @@ class ExampleButtonNode extends StatelessWidget {
               onPressed: onPressed,
               child: const Text("Open example"),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.amber),
+                backgroundColor: WidgetStateProperty.all(Colors.amber),
               ),
             ),
           )
